@@ -1,2 +1,5 @@
 Game mechanics inspo:
   https://openprocessing.org/sketch/70844/
+
+Coding train flowfield:
+  https://www.youtube.com/watch?v=BjoM9oKOAKY&ab_channel=TheCodingTrain
