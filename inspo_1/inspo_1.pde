@@ -71,16 +71,20 @@ void drawFigure()
   noFill();
   translate(x,y);
   if (deltaY < 0 && deltaX > 0)
-  {rotate(PI/2 - tan(deltaY/deltaX));
+  {
+    rotate(PI/2 - tan(deltaY/deltaX));
   }
   if (deltaY < 0 && deltaX < 0)
-  {rotate(PI - tan(deltaY/deltaX));
+  {
+    rotate(PI - tan(deltaY/deltaX));
   }
   if (deltaY > 0 && deltaX > 0)
-  {rotate(-PI/2 + tan(deltaY/deltaX));
+  {
+    rotate(-PI/2 + tan(deltaY/deltaX));
   }
   if (deltaY > 0 && deltaX < 0)
-  {rotate(-PI + tan(deltaY/deltaX));
+  {
+    rotate(-PI + tan(deltaY/deltaX));
   }
   arc (0, 0, t, ballWidth, arcStart, arcEnd);
 }
