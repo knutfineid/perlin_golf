@@ -15,8 +15,13 @@ class Ball {
     fill(col);
     noStroke();
     circle(pos.x, pos.y, size);
+    
     pos.add(vel);
     vel.add(acc);
+    
+    vel.limit(2);
+    acc.mult(0);
+    //println(pos);
   }
   
   void aim(float x, float y) {
@@ -37,10 +42,22 @@ class Ball {
   }
   
   void forward_speed(float x, float y) {
-    vel.x = x; vel.y = y;
-    println(vel);
-    vel.normalize();
-    vel.mult(2);
-    println(vel);
+    acc.x = x; acc.y = y;
+    
+    // wrap around the screen
+    if (pos.x < size/2) {
+      pos.x = size/2;
+      //pos.x = width+(size/2);
+      vel.x = -vel.x;
+    } else if (pos.x > width-(size/2)) {
+      pos.x = width-(size/2);
+      vel.x = -vel.x;
+    } 
+  }
+  
+  void apply_break(PVector [] slope) {
+    //acc.add(slope);
+    int x = (int)pos.x / 10;
+    acc.x += slope[x].x;
   }
 }
